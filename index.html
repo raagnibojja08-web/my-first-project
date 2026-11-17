@@ -4,19 +4,17 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Plant Diseases | Community Service Project</title>
+<title>Plant Diseases | CSP Project</title>
 
 <style>
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Arial, sans-serif;
+    font-family: "Segoe UI", Arial, sans-serif;
 }
 
-html {
-    scroll-behavior: smooth;
-}
+html { scroll-behavior: smooth; }
 
 body {
     background: #f7fbea;
@@ -24,10 +22,8 @@ body {
     line-height: 1.7;
 }
 
-/* NAVIGATION BAR */
 nav {
     background: #174d2a;
-    color: white;
     padding: 17px 5%;
     display: flex;
     justify-content: space-between;
@@ -39,28 +35,23 @@ nav {
     z-index: 100;
 }
 
-nav h2 {
-    font-size: 23px;
-}
+nav h2 { color: white; }
 
 nav ul {
     display: flex;
+    gap: 22px;
     list-style: none;
-    gap: 25px;
     flex-wrap: wrap;
 }
 
 nav a {
-    text-decoration: none;
     color: white;
+    text-decoration: none;
     font-weight: bold;
 }
 
-nav a:hover {
-    color: #f5e99b;
-}
+nav a:hover { color: #f5e99b; }
 
-/* HOME SECTION */
 .hero {
     min-height: 470px;
     background:
@@ -88,19 +79,26 @@ nav a:hover {
     font-size: 19px;
 }
 
-.main-btn {
-    margin-top: 25px;
-    padding: 13px 30px;
-    background: #f5e99b;
-    color: #174d2a;
+button, .upload-label {
     border: none;
-    border-radius: 30px;
+    border-radius: 25px;
+    padding: 12px 25px;
     font-weight: bold;
     cursor: pointer;
-    font-size: 16px;
+    transition: .2s;
 }
 
-/* GENERAL SECTIONS */
+button:hover, .upload-label:hover {
+    opacity: .85;
+    transform: translateY(-2px);
+}
+
+.main-btn {
+    margin-top: 25px;
+    background: #f5e99b;
+    color: #174d2a;
+}
+
 section {
     padding: 65px 7%;
     scroll-margin-top: 75px;
@@ -120,10 +118,7 @@ section {
     font-size: 17px;
 }
 
-/* INTRODUCTION */
-.introduction {
-    background: white;
-}
+.introduction { background: white; }
 
 .intro-content {
     max-width: 1050px;
@@ -133,7 +128,7 @@ section {
 .intro-content h3 {
     color: #28753a;
     margin: 25px 0 10px;
-    font-size: 23px;
+    font-size: 22px;
 }
 
 .intro-content p {
@@ -149,11 +144,6 @@ section {
     margin: 25px 0;
 }
 
-.info-box h3 {
-    margin-top: 0;
-}
-
-/* CAUSES */
 .causes {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -174,10 +164,7 @@ section {
     margin-bottom: 10px;
 }
 
-/* GALLERY */
-.gallery-section {
-    background: #eef5df;
-}
+.gallery-section { background: #eef5df; }
 
 .gallery {
     display: grid;
@@ -217,29 +204,16 @@ section {
     margin-top: 30px;
 }
 
-.upload-btn {
+.upload-label {
     display: inline-block;
     background: #23763b;
     color: white;
-    padding: 14px 30px;
-    border-radius: 30px;
-    cursor: pointer;
     margin: 15px;
-    font-weight: bold;
 }
 
-.upload-btn:hover {
-    background: #145328;
-}
+input[type=file] { display: none; }
 
-#photoUpload {
-    display: none;
-}
-
-/* TEAM MEMBERS */
-.team-section {
-    background: white;
-}
+.team-section { background: white; }
 
 .team-container {
     display: grid;
@@ -276,25 +250,44 @@ section {
     margin-bottom: 10px;
 }
 
-/* EDIT TEAM PANEL */
-.edit-panel {
+.admin-area {
     background: #f0f7df;
-    padding: 25px;
     border-radius: 15px;
-    margin-top: 30px;
-    display: none;
+    padding: 25px;
+    margin-top: 35px;
+    text-align: center;
 }
 
-.edit-panel h3 {
-    text-align: center;
-    margin-bottom: 20px;
-    color: #17602e;
+.admin-area h3 { color: #17602e; }
+
+.admin-area input:not([type=file]) {
+    padding: 12px;
+    border: 1px solid #aaa;
+    border-radius: 8px;
+    margin: 7px;
+    max-width: 100%;
+}
+
+.admin-area button {
+    background: #23763b;
+    color: white;
+    margin: 7px;
+}
+
+.admin-area .secondary {
+    background: #777;
+}
+
+.admin-panel {
+    display: none;
+    margin-top: 20px;
 }
 
 .edit-grid {
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 15px;
+    gap: 12px;
+    margin-top: 20px;
 }
 
 .edit-card {
@@ -311,48 +304,14 @@ section {
 
 .edit-card input {
     width: 100%;
-    padding: 10px;
-    border: 1px solid #aaa;
-    border-radius: 7px;
 }
 
-.edit-buttons {
-    text-align: center;
-    margin-top: 25px;
-}
-
-.edit-btn {
-    background: #e6c84c;
-    color: #24452b;
-    margin: 20px 0;
-}
-
-.save-btn {
-    background: #23763b;
-    color: white;
-}
-
-.cancel-btn {
-    background: #777;
-    color: white;
-    margin-left: 10px;
-}
-
-button {
-    padding: 12px 25px;
-    border: none;
-    border-radius: 25px;
+.status {
+    margin-top: 15px;
     font-weight: bold;
-    cursor: pointer;
-    transition: .3s;
+    overflow-wrap: anywhere;
 }
 
-button:hover {
-    opacity: .85;
-    transform: translateY(-2px);
-}
-
-/* FOOTER */
 footer {
     background: #174d2a;
     color: white;
@@ -360,59 +319,31 @@ footer {
     padding: 28px;
 }
 
-/* RESPONSIVE DESIGN */
 @media(max-width: 950px) {
-    .causes {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .team-container,
-    .edit-grid {
+    .causes { grid-template-columns: repeat(2, 1fr); }
+    .team-container, .edit-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
 @media(max-width: 600px) {
-    nav {
-        justify-content: center;
-    }
-
-    nav ul {
-        justify-content: center;
-        gap: 13px;
-    }
-
-    .hero h1 {
-        font-size: 35px;
-    }
-
-    .hero p {
-        font-size: 16px;
-    }
-
-    section {
-        padding: 45px 5%;
-    }
-
-    .causes,
-    .team-container,
-    .edit-grid {
+    nav { justify-content: center; }
+    nav ul { justify-content: center; gap: 13px; }
+    .hero h1 { font-size: 35px; }
+    .hero p { font-size: 16px; }
+    section { padding: 45px 5%; }
+    .causes, .team-container, .edit-grid {
         grid-template-columns: 1fr;
     }
-
-    .section-title {
-        font-size: 27px;
-    }
+    .section-title { font-size: 27px; }
 }
 </style>
 </head>
 
 <body>
 
-<!-- NAVIGATION -->
 <nav>
     <h2>🌿 PLANT DISEASES</h2>
-
     <ul>
         <li><a href="#home">Home</a></li>
         <li><a href="#introduction">Introduction</a></li>
@@ -423,26 +354,19 @@ footer {
 
 <!-- HOME -->
 <div class="hero" id="home">
-
     <h1>PLANT DISEASES</h1>
-
     <p>
         A Community Service Project to understand plant diseases,
         identify their causes, study their effects and create
         awareness about crop protection among farmers.
         Protect Plants, Protect Nature, Protect Our Future!
     </p>
-
     <button class="main-btn"
-    onclick="document.getElementById('introduction').scrollIntoView()">
-        Explore More
-    </button>
-
+    onclick="location.href='#introduction'">Explore More</button>
 </div>
 
 <!-- INTRODUCTION -->
 <section class="introduction" id="introduction">
-
     <h2 class="section-title">INTRODUCTION</h2>
 
     <div class="intro-content">
@@ -472,11 +396,10 @@ footer {
         </p>
 
         <p>
-            Common symptoms of plant diseases include yellow
-            leaves, brown spots, wilting, leaf curling,
-            rotting, unusual growth and premature falling
-            of leaves. These symptoms can affect the
-            productivity and quality of agricultural crops.
+            Common symptoms include yellow leaves, brown spots,
+            wilting, leaf curling, rotting, unusual growth and
+            premature falling of leaves. These symptoms can
+            reduce the productivity and quality of crops.
         </p>
 
         <h3>🌾 Importance of Identifying Plant Diseases</h3>
@@ -491,17 +414,14 @@ footer {
 
         <p>
             Early identification reduces crop losses,
-            improves the quality of agricultural products,
-            saves farming expenses and protects farmers'
-            income. It also helps in reducing unnecessary
-            pesticide usage and supports environmentally
-            friendly farming practices.
+            improves agricultural product quality, saves
+            farming expenses and protects farmers' income.
+            It also helps reduce unnecessary pesticide use
+            and supports environmentally friendly farming.
         </p>
 
         <div class="info-box">
-
             <h3>🌿 Why Should We Protect Crops?</h3>
-
             <p>
                 Agriculture is an important source of food
                 and livelihood for millions of people.
@@ -511,91 +431,67 @@ footer {
                 Healthy crops also contribute to a healthy
                 environment and sustainable agriculture.
             </p>
-
         </div>
 
         <h3>🔬 Common Causes of Plant Diseases</h3>
 
-        <p>
-            Plant diseases can occur due to different
-            biological and environmental factors. The
-            following are some of the major causes.
-        </p>
-
         <div class="causes">
-
             <div class="cause-card">
                 <h3>🍄 Fungi</h3>
-                <p>
-                    Fungi are common plant disease-causing
-                    organisms. They can cause rust, powdery
-                    mildew, leaf spots, blights and root rot.
-                </p>
+                <p>Cause rust, powdery mildew, leaf spots,
+                blights and root rot.</p>
             </div>
 
             <div class="cause-card">
                 <h3>🦠 Bacteria</h3>
-                <p>
-                    Bacterial infections may cause leaf spots,
-                    bacterial wilt, soft rot and other plant
-                    tissue damage.
-                </p>
+                <p>Cause bacterial spots, bacterial wilt,
+                soft rot and tissue damage.</p>
             </div>
 
             <div class="cause-card">
                 <h3>🌿 Viruses</h3>
-                <p>
-                    Plant viruses can cause mosaic patterns,
-                    yellowing, leaf curling, stunted growth
-                    and reduced crop production.
-                </p>
+                <p>Cause mosaic patterns, yellowing,
+                leaf curling and stunted growth.</p>
             </div>
 
             <div class="cause-card">
                 <h3>☀️ Environment</h3>
-                <p>
-                    Drought, excess moisture, poor soil
-                    drainage, nutrient deficiency and
-                    extreme temperatures can damage plants.
-                </p>
+                <p>Drought, excess moisture, poor drainage,
+                nutrient deficiency and extreme temperatures
+                damage plants.</p>
             </div>
-
         </div>
 
-        <h3>🌻 Prevention and Control of Plant Diseases</h3>
+        <h3>🌻 Prevention and Control</h3>
 
         <div class="info-box">
-            <p>
-                1. Use healthy and disease-free seeds.<br>
-                2. Maintain proper irrigation and drainage.<br>
-                3. Remove and safely dispose of infected plant parts.<br>
-                4. Maintain cleanliness in agricultural fields.<br>
-                5. Follow crop rotation practices.<br>
-                6. Use disease-resistant plant varieties.<br>
-                7. Control insect pests that spread plant viruses.<br>
-                8. Consult agricultural experts for correct treatment.
-            </p>
+            1. Use healthy and disease-free seeds.<br>
+            2. Maintain proper irrigation and drainage.<br>
+            3. Remove and safely dispose of infected plant parts.<br>
+            4. Maintain cleanliness in agricultural fields.<br>
+            5. Follow crop rotation practices.<br>
+            6. Use disease-resistant plant varieties.<br>
+            7. Control insect pests that spread plant viruses.<br>
+            8. Consult agricultural experts for correct treatment.
         </div>
 
         <h3>🌱 Objective of Our Community Service Project</h3>
 
         <p>
-            The main objective of our Community Service
-            Project is to create awareness among farmers and
-            local communities about different plant diseases,
-            their symptoms, causes, prevention and management.
+            The main objective of our Community Service Project
+            is to create awareness among farmers and local
+            communities about different plant diseases, their
+            symptoms, causes, prevention and management.
             Through field visits, observations and interaction
             with farmers, we aim to understand the challenges
             faced in crop protection and share useful
             information about maintaining healthy plants.
         </p>
-
     </div>
 </section>
 
-<!-- PHOTO GALLERY -->
+<!-- GALLERY -->
 <section class="gallery-section" id="gallery">
-
     <h2 class="section-title">OUR PROJECT GALLERY</h2>
 
     <p class="section-subtitle">
@@ -603,71 +499,24 @@ footer {
         farmer interactions and awareness activities.
     </p>
 
-    <!-- EXACTLY SIX PHOTO SLOTS -->
-    <div class="gallery" id="photoGallery">
+    <!-- Exactly six gallery slots -->
+    <div class="gallery" id="photoGallery"></div>
 
-        <div class="photo-card">
-            <img src="https://placehold.co/400x300/e8f2dc/276b37?text=Photo+1" alt="Project photo 1">
-            <p>Project Photo 1</p>
-        </div>
-
-        <div class="photo-card">
-            <img src="https://placehold.co/400x300/e8f2dc/276b37?text=Photo+2" alt="Project photo 2">
-            <p>Project Photo 2</p>
-        </div>
-
-        <div class="photo-card">
-            <img src="https://placehold.co/400x300/e8f2dc/276b37?text=Photo+3" alt="Project photo 3">
-            <p>Project Photo 3</p>
-        </div>
-
-        <div class="photo-card">
-            <img src="https://placehold.co/400x300/e8f2dc/276b37?text=Photo+4" alt="Project photo 4">
-            <p>Project Photo 4</p>
-        </div>
-
-        <div class="photo-card">
-            <img src="https://placehold.co/400x300/e8f2dc/276b37?text=Photo+5" alt="Project photo 5">
-            <p>Project Photo 5</p>
-        </div>
-
-        <div class="photo-card">
-            <img src="https://placehold.co/400x300/e8f2dc/276b37?text=Photo+6" alt="Project photo 6">
-            <p>Project Photo 6</p>
-        </div>
-
-    </div>
-
-    <!-- UPLOAD PHOTOS -->
     <div class="upload-area">
-
-        <h3>📸 UPLOAD YOUR OWN PROJECT PHOTOS</h3>
-
+        <h3>📸 OUR PROJECT PHOTOGRAPHS</h3>
         <p>
-            Select exactly 6 photographs from your computer.
-            JPG, JPEG and PNG formats are supported.
+            The six photos uploaded by the project administrator
+            will be displayed here permanently.
         </p>
 
-        <label for="photoUpload" class="upload-btn">
-            + UPLOAD PHOTOS
-        </label>
-
-        <input
-            type="file"
-            id="photoUpload"
-            accept=".jpg,.jpeg,.png,image/jpeg,image/png"
-            multiple
-        >
-
-        <p id="photoMessage" aria-live="polite"></p>
-
+        <p id="photoStatus" class="status" aria-live="polite">
+            Loading gallery...
+        </p>
     </div>
-
 </section>
 
-<!-- TEAM MEMBERS -->
+<!-- TEAM -->
 <section class="team-section" id="team">
-
     <h2 class="section-title">OUR TEAM MEMBERS</h2>
 
     <p class="section-subtitle">
@@ -675,77 +524,241 @@ footer {
         the Plant Diseases Community Service Project.
     </p>
 
-    <!-- EDIT THESE FOUR DETAILS USING THE EDIT BUTTON -->
     <div class="team-container" id="teamContainer"></div>
 
-    <div style="text-align:center">
+    <!-- ADMIN LOGIN AND EDITING -->
+    <div class="admin-area">
+        <h3>🔐 ADMIN ACCESS</h3>
+        <p>Only the project administrator can upload photos
+        and edit student details.</p>
 
-        <button class="edit-btn" onclick="openEditor()">
-            ✏️ EDIT TEAM DETAILS
-        </button>
-
-    </div>
-
-    <!-- TEAM EDITING PANEL -->
-    <div class="edit-panel" id="editPanel">
-
-        <h3>EDIT STUDENT DETAILS</h3>
-
-        <div class="edit-grid" id="editGrid"></div>
-
-        <div class="edit-buttons">
-
-            <button class="save-btn" onclick="saveTeam()">
-                💾 SAVE DETAILS
-            </button>
-
-            <button class="cancel-btn" onclick="closeEditor()">
-                CANCEL
-            </button>
-
+        <div id="loginArea">
+            <form id="loginForm">
+                <input id="adminEmail" type="email"
+                    placeholder="Admin email" required>
+                <input id="adminPassword" type="password"
+                    placeholder="Admin password" required>
+                <button type="submit">ADMIN LOGIN</button>
+            </form>
         </div>
 
-        <p id="teamMessage" style="text-align:center;margin-top:15px;"></p>
+        <div id="adminPanel" class="admin-panel">
+            <h3>PROJECT ADMIN PANEL</h3>
+            <p>You are logged in. You can update the gallery
+            and team details.</p>
 
+            <h4 style="margin-top:20px">Upload exactly 6 photos</h4>
+
+            <label for="photoUpload" class="upload-label">
+                📸 SELECT SIX PHOTOS
+            </label>
+            <input id="photoUpload" type="file"
+                accept="image/jpeg,image/png" multiple>
+
+            <p id="uploadStatus" class="status" aria-live="polite"></p>
+
+            <hr style="margin:25px 0;border:1px solid #cbd9b9">
+
+            <h4>EDIT FOUR STUDENT DETAILS</h4>
+
+            <div class="edit-grid" id="editGrid"></div>
+
+            <button id="saveTeamButton">💾 SAVE TEAM DETAILS</button>
+            <button id="logoutButton" class="secondary">LOG OUT</button>
+
+            <p id="teamStatus" class="status" aria-live="polite"></p>
+        </div>
     </div>
-
 </section>
 
-<!-- FOOTER -->
 <footer>
-
     <h3>🌿 PLANT DISEASES - CSP PROJECT</h3>
-
     <p>Community Service Project</p>
-
     <p>Protect Plants, Protect Nature, Protect Our Future!</p>
-
     <p>© 2026 All Rights Reserved</p>
-
 </footer>
 
-<script>
+<!-- FIREBASE AND JAVASCRIPT -->
+<script type="module">
 
-/* =========================================
-   PHOTO GALLERY UPLOAD
+import { initializeApp }
+from "https://www.gstatic.com/firebasejs/11.10.0/firebase-app.js";
 
-   Select exactly 6 JPG, JPEG or PNG photos.
-   Photos will immediately appear on website.
+import {
+    getAuth,
+    signInWithEmailAndPassword,
+    signOut,
+    onAuthStateChanged
+}
+from "https://www.gstatic.com/firebasejs/11.10.0/firebase-auth.js";
 
-   To change photos, click UPLOAD PHOTOS and
-   select your new set of six photographs.
-========================================= */
+import {
+    getFirestore,
+    doc,
+    getDoc,
+    setDoc
+}
+from "https://www.gstatic.com/firebasejs/11.10.0/firebase-firestore.js";
 
-const photoUpload = document.getElementById("photoUpload");
+import {
+    getStorage,
+    ref,
+    uploadBytes,
+    getDownloadURL,
+    deleteObject
+}
+from "https://www.gstatic.com/firebasejs/11.10.0/firebase-storage.js";
 
-photoUpload.addEventListener("change", function(event) {
+
+/* ==========================================
+   STEP 1: ADD YOUR FIREBASE CONFIGURATION
+
+   Replace the example values below with the
+   configuration from your Firebase project.
+========================================== */
+
+const firebaseConfig = {
+    apiKey: "YOUR_API_KEY",
+    authDomain: "YOUR_PROJECT.firebaseapp.com",
+    projectId: "YOUR_PROJECT_ID",
+    storageBucket: "YOUR_STORAGE_BUCKET",
+    messagingSenderId: "YOUR_SENDER_ID",
+    appId: "YOUR_APP_ID"
+};
+
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+const db = getFirestore(app);
+const storage = getStorage(app);
+
+
+/* ==========================================
+   DEFAULT STUDENT DETAILS
+
+   These details are shown if no team details
+   have been saved online yet.
+========================================== */
+
+const defaultStudents = [
+    { name: "B. Raagni", roll: "24JNA05112" },
+    { name: "Student 2", roll: "24JNA05140" },
+    { name: "Student 3", roll: "24JNA05091" },
+    { name: "Student 4", roll: "24JNA05114" }
+];
+
+let students = [...defaultStudents];
+let currentUser = null;
+let oldPhotos = [];
+
+
+/* ==========================================
+   ELEMENTS
+========================================== */
+
+const gallery = document.getElementById("photoGallery");
+const photoStatus = document.getElementById("photoStatus");
+const uploadStatus = document.getElementById("uploadStatus");
+const teamStatus = document.getElementById("teamStatus");
+const adminPanel = document.getElementById("adminPanel");
+const loginArea = document.getElementById("loginArea");
+
+
+/* ==========================================
+   DISPLAY GALLERY
+
+   Exactly six slots are always displayed.
+========================================== */
+
+function displayGallery(photos = []) {
+
+    gallery.innerHTML = "";
+
+    for (let i = 0; i < 6; i++) {
+
+        const card = document.createElement("div");
+        card.className = "photo-card";
+
+        const img = document.createElement("img");
+
+        img.alt = "CSP Project Photo " + (i + 1);
+
+        if (photos[i]?.url) {
+            img.src = photos[i].url;
+        } else {
+            img.src =
+            "https://placehold.co/400x300/e8f2dc/276b37?text=Upload+Photo+" +
+            (i + 1);
+        }
+
+        const caption = document.createElement("p");
+        caption.textContent = "Project Photo " + (i + 1);
+
+        card.appendChild(img);
+        card.appendChild(caption);
+        gallery.appendChild(card);
+    }
+}
+
+
+/* ==========================================
+   LOAD PERMANENT PHOTOS FROM FIRESTORE
+========================================== */
+
+async function loadGallery() {
+
+    try {
+
+        const snapshot = await getDoc(doc(db, "gallery", "main"));
+
+        if (snapshot.exists()) {
+
+            const data = snapshot.data();
+            oldPhotos = Array.isArray(data.photos) ? data.photos : [];
+
+            displayGallery(oldPhotos);
+
+            photoStatus.textContent =
+            "Project gallery loaded successfully.";
+
+        } else {
+
+            oldPhotos = [];
+            displayGallery([]);
+
+            photoStatus.textContent =
+            "The project administrator has not uploaded photos yet.";
+
+        }
+
+    } catch (error) {
+
+        displayGallery([]);
+
+        photoStatus.textContent =
+        "Unable to load photos. Please check your Firebase setup.";
+
+        console.error(error);
+    }
+}
+
+
+/* ==========================================
+   UPLOAD EXACTLY SIX PHOTOS TO FIREBASE
+========================================== */
+
+document.getElementById("photoUpload")
+.addEventListener("change", async function(event) {
 
     const files = Array.from(event.target.files);
-    const message = document.getElementById("photoMessage");
+
+    if (!currentUser) {
+        uploadStatus.textContent = "Please log in first.";
+        return;
+    }
 
     if (files.length !== 6) {
-        message.textContent = "Please select exactly 6 photos.";
-        photoUpload.value = "";
+        uploadStatus.textContent = "Please select exactly 6 photos.";
+        event.target.value = "";
         return;
     }
 
@@ -754,79 +767,101 @@ photoUpload.addEventListener("change", function(event) {
     );
 
     if (!valid) {
-        message.textContent =
+        uploadStatus.textContent =
         "Only JPG, JPEG and PNG images are allowed.";
-
-        photoUpload.value = "";
+        event.target.value = "";
         return;
     }
 
-    const gallery = document.getElementById("photoGallery");
+    // Limit each image to 10 MB.
+    if (files.some(file => file.size > 10 * 1024 * 1024)) {
+        uploadStatus.textContent =
+        "Each photo must be smaller than 10 MB.";
+        event.target.value = "";
+        return;
+    }
 
-    gallery.innerHTML = "";
+    const uploadButton = document.querySelector(".upload-label");
+    uploadButton.style.pointerEvents = "none";
+    uploadButton.textContent = "UPLOADING...";
 
-    files.forEach((file, index) => {
+    uploadStatus.textContent =
+    "Uploading your six photographs. Please wait...";
 
-        const reader = new FileReader();
+    try {
 
-        reader.onload = function(e) {
+        const newPhotos = await Promise.all(
 
-            const card = document.createElement("div");
-            card.className = "photo-card";
+            files.map(async (file, index) => {
 
-            const img = document.createElement("img");
-            img.src = e.target.result;
-            img.alt = "CSP Photo " + (index + 1);
+                const safeName = file.name.replace(/[^a-zA-Z0-9._-]/g, "_");
 
-            const caption = document.createElement("p");
-            caption.textContent = "Project Photo " + (index + 1);
+                const path =
+                "gallery/" + Date.now() + "_" + index + "_" + safeName;
 
-            card.appendChild(img);
-            card.appendChild(caption);
+                const imageRef = ref(storage, path);
 
-            gallery.appendChild(card);
+                await uploadBytes(imageRef, file, {
+                    contentType: file.type
+                });
 
-        };
+                const url = await getDownloadURL(imageRef);
 
-        reader.readAsDataURL(file);
+                return {
+                    url: url,
+                    path: path
+                };
 
-    });
+            })
 
-    message.textContent =
-    "Your 6 project photographs have been selected!";
+        );
 
-    photoUpload.value = "";
+        // Save the six photo URLs and paths permanently in Firestore.
+        await setDoc(doc(db, "gallery", "main"), {
+            photos: newPhotos,
+            updatedAt: new Date().toISOString()
+        });
+
+        oldPhotos = newPhotos;
+
+        displayGallery(newPhotos);
+
+        uploadStatus.textContent =
+        "SUCCESS! All 6 photos have been saved online.";
+
+        // Delete old images only after the new gallery is saved.
+        await Promise.allSettled(
+            oldPhotos.length === 0 ? [] :
+            oldPhotos.map(photo =>
+                photo.path ? deleteObject(ref(storage, photo.path)) : Promise.resolve()
+            )
+        );
+
+    } catch (error) {
+
+        uploadStatus.textContent =
+        "Upload failed: " + error.message;
+
+        console.error(error);
+
+    } finally {
+
+        uploadButton.style.pointerEvents = "auto";
+        uploadButton.textContent = "📸 SELECT SIX PHOTOS";
+        event.target.value = "";
+
+    }
 
 });
 
 
-/* =========================================
-   TEAM MEMBER DETAILS
-
-   Change the names and roll numbers here,
-   or use EDIT TEAM DETAILS on the website.
-========================================= */
-
-let students = [
-
-    {name: "B. Raagni", roll: "24JNA05112"},
-
-    {name: "Student 2", roll: "24JNA05140"},
-
-    {name: "Student 3", roll: "24JNA05091"},
-
-    {name: "Student 4", roll: "24JNA05114"}
-
-];
-
-
-/* DISPLAY FOUR STUDENT CARDS */
+/* ==========================================
+   DISPLAY FOUR STUDENT DETAILS
+========================================== */
 
 function displayTeam() {
 
-    const container =
-    document.getElementById("teamContainer");
-
+    const container = document.getElementById("teamContainer");
     container.innerHTML = "";
 
     students.forEach((student, index) => {
@@ -849,10 +884,7 @@ function displayTeam() {
         roll.appendChild(bold);
         roll.appendChild(document.createTextNode(student.roll));
 
-        card.appendChild(number);
-        card.appendChild(name);
-        card.appendChild(roll);
-
+        card.append(number, name, roll);
         container.appendChild(card);
 
     });
@@ -860,13 +892,52 @@ function displayTeam() {
 }
 
 
-/* OPEN EDIT PANEL */
+/* ==========================================
+   LOAD TEAM DETAILS FROM FIRESTORE
+========================================== */
 
-function openEditor() {
+async function loadTeam() {
 
-    const panel = document.getElementById("editPanel");
+    try {
+
+        const snapshot = await getDoc(doc(db, "team", "main"));
+
+        if (snapshot.exists()) {
+
+            const data = snapshot.data();
+
+            if (
+                Array.isArray(data.students) &&
+                data.students.length === 4 &&
+                data.students.every(s =>
+                    s &&
+                    typeof s.name === "string" &&
+                    typeof s.roll === "string"
+                )
+            ) {
+                students = data.students;
+            }
+
+        }
+
+        displayTeam();
+
+    } catch (error) {
+
+        displayTeam();
+        console.error("Team loading error:", error);
+
+    }
+}
+
+
+/* ==========================================
+   CREATE EDITABLE STUDENT INPUTS
+========================================== */
+
+function createEditor() {
+
     const grid = document.getElementById("editGrid");
-
     grid.innerHTML = "";
 
     students.forEach((student, index) => {
@@ -881,6 +952,7 @@ function openEditor() {
         nameLabel.textContent = "Student Name";
 
         const nameInput = document.createElement("input");
+        nameInput.type = "text";
         nameInput.id = "name" + index;
         nameInput.value = student.name;
 
@@ -888,126 +960,158 @@ function openEditor() {
         rollLabel.textContent = "Roll Number";
 
         const rollInput = document.createElement("input");
+        rollInput.type = "text";
         rollInput.id = "roll" + index;
         rollInput.value = student.roll;
 
-        card.appendChild(heading);
-        card.appendChild(nameLabel);
-        card.appendChild(nameInput);
-        card.appendChild(rollLabel);
-        card.appendChild(rollInput);
+        card.append(
+            heading,
+            nameLabel,
+            nameInput,
+            rollLabel,
+            rollInput
+        );
 
         grid.appendChild(card);
 
     });
 
-    panel.style.display = "block";
-
-    panel.scrollIntoView({
-        behavior: "smooth",
-        block: "center"
-    });
-
 }
 
 
-/* SAVE EDITED STUDENT DETAILS */
+/* ==========================================
+   SAVE STUDENT DETAILS PERMANENTLY ONLINE
+========================================== */
 
-function saveTeam() {
+document.getElementById("saveTeamButton")
+.addEventListener("click", async function() {
+
+    if (!currentUser) {
+        teamStatus.textContent = "Please log in first.";
+        return;
+    }
 
     const updatedStudents = [];
 
     for (let i = 0; i < 4; i++) {
 
-        const name =
-        document.getElementById("name" + i).value.trim();
-
-        const roll =
-        document.getElementById("roll" + i).value.trim();
+        const name = document.getElementById("name" + i).value.trim();
+        const roll = document.getElementById("roll" + i).value.trim();
 
         if (!name || !roll) {
-
-            document.getElementById("teamMessage").textContent =
-            "Please fill all four student details.";
-
+            teamStatus.textContent =
+            "Please enter all four names and roll numbers.";
             return;
         }
 
-        updatedStudents.push({
-            name: name,
-            roll: roll
-        });
+        updatedStudents.push({ name, roll });
 
     }
-
-    students = updatedStudents;
 
     try {
-        localStorage.setItem(
-            "cspStudents",
-            JSON.stringify(students)
-        );
+
+        await setDoc(doc(db, "team", "main"), {
+            students: updatedStudents,
+            updatedAt: new Date().toISOString()
+        });
+
+        students = updatedStudents;
+
+        displayTeam();
+
+        teamStatus.textContent =
+        "Student details saved permanently online!";
+
     } catch (error) {
-        document.getElementById("teamMessage").textContent =
-        "Unable to save details in this browser.";
-        return;
-    }
 
-    displayTeam();
+        teamStatus.textContent =
+        "Unable to save: " + error.message;
 
-    document.getElementById("teamMessage").textContent =
-    "Student details saved successfully!";
-
-    closeEditor();
-
-}
-
-
-/* CLOSE EDIT PANEL */
-
-function closeEditor() {
-
-    document.getElementById("editPanel").style.display = "none";
-
-}
-
-
-/* LOAD PREVIOUSLY SAVED DETAILS */
-
-try {
-
-    const savedStudents = localStorage.getItem("cspStudents");
-
-    if (savedStudents) {
-
-        const parsed = JSON.parse(savedStudents);
-
-        if (
-            Array.isArray(parsed) &&
-            parsed.length === 4 &&
-            parsed.every(student =>
-                student &&
-                typeof student.name === "string" &&
-                typeof student.roll === "string"
-            )
-        ) {
-
-            students = parsed;
-
-        }
+        console.error(error);
 
     }
 
-} catch (error) {
+});
 
-    console.log("Using default team details.");
 
-}
+/* ==========================================
+   ADMIN LOGIN
+========================================== */
 
+document.getElementById("loginForm")
+.addEventListener("submit", async function(event) {
+
+    event.preventDefault();
+
+    const email = document.getElementById("adminEmail").value;
+    const password = document.getElementById("adminPassword").value;
+
+    try {
+
+        await signInWithEmailAndPassword(auth, email, password);
+
+    } catch (error) {
+
+        alert("Login failed. Check your email and password.");
+
+        console.error(error);
+
+    }
+
+});
+
+
+/* ==========================================
+   AUTHENTICATION STATE
+========================================== */
+
+onAuthStateChanged(auth, async function(user) {
+
+    currentUser = user;
+
+    if (user) {
+
+        loginArea.style.display = "none";
+        adminPanel.style.display = "block";
+
+        createEditor();
+
+        uploadStatus.textContent =
+        "Admin login successful. You can upload photos.";
+
+    } else {
+
+        loginArea.style.display = "block";
+        adminPanel.style.display = "none";
+
+    }
+
+});
+
+
+/* ==========================================
+   ADMIN LOGOUT
+========================================== */
+
+document.getElementById("logoutButton")
+.addEventListener("click", async function() {
+
+    await signOut(auth);
+
+});
+
+
+/* INITIAL LOAD */
+
+displayGallery([]);
 displayTeam();
+
+await Promise.all([
+    loadGallery(),
+    loadTeam()
+]);
 
 </script>
 
 </body>
 </html>
-
